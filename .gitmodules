@@ -1,3 +1,6 @@
 [submodule "Folder1"]
 	path = Folder1
 	url = git@github.com:nguyenvanlam2003/Folder1.git
+[submodule "Folder2"]
+	path = Folder2
+	url = git@github.com:nguyenvanlam2003/Folder2.git
