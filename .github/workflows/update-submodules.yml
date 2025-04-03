@@ -21,11 +21,13 @@ jobs:
 
       - name: Cập nhật submodule
         run: |
-          git pull origin main --allow-unrelated-histories
+         
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-
-          git submodule update --remote --merge
+          
+          git pull origin main --allow-unrelated-histories
+          git submodule update --remote --recursive
+          
           git add .
           git commit -m "Auto update submodules" || echo "No changes to commit"
           git push
