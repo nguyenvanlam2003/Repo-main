@@ -1,0 +1,30 @@
+name: Update Submodules
+
+on:
+  workflow_dispatch:  # Cho phép chạy thủ công khi cần
+  schedule:
+    - cron: '*/10 * * * *'  # Chạy tự động mỗi 10 phút
+  push:
+    branches:
+      - main  # Chạy khi có thay đổi trên nhánh main của repo tổng
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo tổng
+        uses: actions/checkout@v3
+        with:
+          submodules: true
+          token: ${{ secrets.GH_TOKEN }}
+
+      - name: Cập nhật submodule
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+          git submodule update --remote --merge
+          git add .
+          git commit -m "Auto update submodules" || echo "No changes to commit"
+          git push
