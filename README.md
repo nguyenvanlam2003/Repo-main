@@ -58,7 +58,7 @@ git submodule update --remote --recursive
 ```
 ### 4. **Thêm submodule mới**
 ```bash
-git submodule add https://github.com/username/RepoSub3.git Folder3
+git submodule add -b main https://github.com/username/RepoSub3.git Folder3
 ```
 ### **Các lệnh git hữu ich**
 ### **Clone repo tổng với submodules**

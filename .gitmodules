@@ -4,3 +4,7 @@
 [submodule "Folder2"]
 	path = Folder2
 	url = git@github.com:nguyenvanlam2003/Folder2.git
+[submodule "Folder3New"]
+	path = Folder3New
+	url = git@github.com:nguyenvanlam2003/Folder3.git
+	branch = main
