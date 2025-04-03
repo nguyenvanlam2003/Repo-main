@@ -1,6 +1,9 @@
 name: Update Submodules
 
 on:
+workflow_dispatch:  # Cho phép chạy thủ công khi cần
+  schedule:
+    - cron: '*/5 * * * *'  # Chạy tự động mỗi 5 phút
   push:
     branches:
       - main  # Chạy khi có thay đổi trên nhánh main của repo tổng
