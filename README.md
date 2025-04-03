@@ -12,14 +12,18 @@ Git Submodules cho phép bạn quản lý các **repo con** bên trong một **r
 
 ## **Thiết lập và cấu hình**
 
-### 1. **Clone repo tổng và các submodule**
+### 1. **Clone repo tổng **
 
 Để clone repo tổng cùng với các submodules, bạn có thể sử dụng lệnh sau:
 
 ```bash
-git clone --recurse-subbmodules https://github.com/username/Repo-Main.git
+git clone https://github.com/username/Repo-Main.git
 ```
-### 2. **Tự động ccập nhật các submodule**
+### 2. **Thêm submodule mới**
+```bash
+git submodule add -b main https://github.com/username/RepoSub3.git Folder11
+```
+### 3. **Tự động cập nhật các submodule**
 ```bash
 name: Update Submodules
 
@@ -52,16 +56,13 @@ jobs:
           git commit -m "Auto update submodules" || echo "No changes to commit"
           git push
 ```
-### 3. ** Cập nhật các submodule**
+### 4. ** Cập nhật các submodule**
 ```bash
 git submodule update --remote --recursive
 ```
-### 4. **Thêm submodule mới**
-```bash
-git submodule add -b main https://github.com/username/RepoSub3.git Folder3
-```
+
 ### **Các lệnh git hữu ich**
-### **Clone repo tổng với submodules**
+### **Clone repo tổng và các submodules**
 ```bash
 git clone --recurse-submodules https://github.com/username/Repo-Main.git
 ```
@@ -73,7 +74,14 @@ git submodule update --remote --recursive
 
 ### ** Thêm mới 1 submodule**
 ```bash
-git submodule add https://github.com/username/RepoSub3.git Folder3
+git submodule add https://github.com/username/RepoSub3.git Folder1
 ```
+### ** Pull code từ repo tổng**
+vào Actions của Repo-main 
+chọn Update Submodules->Run workflow
+```bash
 
+git pull origin main  # Pull từ repo tổng
+git submodule update --remote --recursive  # Cập nhật các submodule
+```
 
